@@ -2,14 +2,8 @@
 
 <h3>Today: {{today | date: 'dd/MM/yyyy'}}</h3>
 
-<p>
-    Image URL: {{imageUrl | lowercase}}
-</p>
+<img [src]="imageUrl" [width]="imageWidth">
 
-<p>
-    {{price | currency}}
+<p [class] = "multipleClasses">
+    This is a paragraph to test the class and style binding
 </p>
-
-<span>
-    Selling price: {{sellingPrice | currency}}, profit: {{sellingPrice | profit: 10 | currency}}
-</span>

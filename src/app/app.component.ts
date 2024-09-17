@@ -10,9 +10,14 @@ export class AppComponent {
 
   today = new Date();
 
-  imageUrl = 'https://dotnethow.net/images/movies/movie-1.jpg';
+  imageUrl = 'https://cdn.pixabay.com/photo/2021/08/02/18/11/covid-6517476_1280.jpg';
+  imageWidth = 200;
 
   price = 10;
   
   sellingPrice = 15.50;
+
+  attributeValue = "movies-app-test-value";
+
+  multipleClasses = 'sample-bgcolor sample-color';
 }
