@@ -19,4 +19,6 @@ export class AppComponent {
     console.log(_color);
     this.pColor = _color;
   }
+
+  fullName = "Voja Jokić";
 }

@@ -1,10 +1,3 @@
-<h1>{{title| uppercase}}</h1>
+<input [(ngModel)]="fullName" >
 
-<h3>Today: {{today | date: 'dd/MM/yyyy'}}</h3>
-
-<button (click)="setTimeToNow()">Set time to now</button>
-<p>Time now: {{timeNow}}</p>
-
-<input #color type="text" placeholder="type your color">
-<button (click)="setTextColor(color.value)">Set Color</button>
-<p [style.color]="pColor">This is just sample text</p>
+<p>{{fullName}}</p>
