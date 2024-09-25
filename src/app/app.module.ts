@@ -15,6 +15,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ProfitPipe } from './pipes/profit.pipe';
 import { FormsModule } from '@angular/forms';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,15 @@ import { DetailsActorsComponent } from './components/details-actors/details-acto
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {path:'', component: HomeComponent},
+      {path:'home', component: HomeComponent},
+      {path:'details', component: DetailsComponent},
+      {path: 'details/actors', component: DetailsActorsComponent}, 
+      {path: 'details/movies', component: DetailsMoviesComponent},
+      {path:'details/reviews', component: DetailsReviewsComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
