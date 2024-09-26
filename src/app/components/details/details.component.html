@@ -62,7 +62,7 @@
     </div>
 
     <div class="text-center">
-        <a class="btn btn-warning" routerLink="/details/actors">View all actors</a>
+        <a class="btn btn-warning" [routerLink]="['/details/actors/'+movieId]">View all actors</a>
     </div>
 </div>
 
@@ -78,7 +78,7 @@
     </div>
 
     <div class="text-center">
-        <a class="btn btn-warning" routerLink="/details/reviews">View more</a>
+        <a class="btn btn-warning" [routerLink]="['/details/reviews/'+movieId]">View more</a>
     </div>
 
 </div>
@@ -94,7 +94,7 @@
     </div>
 
     <div class="text-center">
-        <a class="btn btn-warning" routerLink="/details/movies">View more</a>
+        <a class="btn btn-warning" [routerLink]="['/details/movies/'+movieId]">View more</a>
     </div>
 </div>
 
