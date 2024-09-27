@@ -8,14 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  movieId = '';
+  errorColor = "text-danger";
+  successColor = "text-success";
+  isSuccess = false;
 
-  constructor(private _activatedRoute: ActivatedRoute) { 
-    this._activatedRoute.params.subscribe((p) => {
-      this.movieId = p["id"];
-      console.log("Movie Id is ", this.movieId)
-    })
-  }
+  constructor() {   }
 
   ngOnInit(): void {
   }
