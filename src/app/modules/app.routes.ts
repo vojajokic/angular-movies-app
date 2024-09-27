@@ -6,6 +6,7 @@ import { DetailsReviewsComponent } from "../components/details-reviews/details-r
 import { DetailsComponent } from "../components/details/details.component";
 import { HomeComponent } from "../components/home/home.component";
 import { SearchComponent } from "../components/search/search.component";
+import { NotFoundComponent } from "../components/not-found/not-found.component";
 
 const routes: Routes = [
     {path:'', component: HomeComponent},
@@ -16,6 +17,9 @@ const routes: Routes = [
     {path:'details/reviews/:id', component: DetailsReviewsComponent},
     {path:'search/:movieTitle', component:SearchComponent},
     // {path:'feadback', component: FeadbackComponent}
+
+    //404 Page for non-existing URLs
+    {path:'**', component: NotFoundComponent}, 
 ]
 
 @NgModule({
