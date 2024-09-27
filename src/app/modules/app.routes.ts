@@ -15,6 +15,15 @@ const routes: Routes = [
     {path: 'details/actors/:id', component: DetailsActorsComponent}, 
     {path: 'details/movies/:id', component: DetailsMoviesComponent},
     {path:'details/reviews/:id', component: DetailsReviewsComponent},
+
+    //START: Nested Routes
+    // {path:'details/:id', component: DetailsComponent, children: [
+    //     {path:'actors', component:DetailsActorsComponent},
+    //     {path:'movies', component:DetailsMoviesComponent},
+    //     {path:'reviews', component:DetailsReviewsComponent}
+    // ]},
+    //END: Nested Routes
+
     {path:'search/:movieTitle', component:SearchComponent},
     // {path:'feadback', component: FeadbackComponent}
 
