@@ -8,11 +8,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  errorColor = "text-danger";
-  successColor = "text-success";
-  isSuccess = false;
+  currentStyle: Record<string, string> = {};
 
-  constructor() {   }
+  isCentered = false;
+  isSuccessed = false;
+  isLarge = true;
+
+  constructor() {  
+    this.currentStyle = {
+      'text-align': this.isCentered ? 'center' : '',
+      'color': this.isSuccessed ? 'green' : 'red',
+      'font-size': this.isLarge ? 'large' : 'small'
+    }
+   }
 
   ngOnInit(): void {
   }
