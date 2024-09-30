@@ -8,15 +8,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  // currentStyle: Record<string, string> = {};
+  constructor() {
+    
+  }
+
+  isVisible = true;
+   // currentStyle: Record<string, string> = {};
   // isCentered = false;
   // isSuccessed = false;
   // isLarge = true;
 
-  constructor() {
-    
-  }
-  // constructor() {  
+ // constructor() {  
   //   this.currentStyle = {
   //     'text-align': this.isCentered ? 'center' : '',
   //     'color': this.isSuccessed ? 'green' : 'red',
