@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutesModule } from './modules/app.routes';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderDirective } from './directives/header.directive';
+import { MyIfDirective } from './directives/my-if.directive';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HeaderDirective } from './directives/header.directive';
 
     //Directives
      HeaderDirective,
+     MyIfDirective,
   ],
   imports: [
     BrowserModule,

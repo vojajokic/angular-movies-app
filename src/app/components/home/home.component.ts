@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
     
   }
 
-  isVisible = true;
+  integerValue = 251;
 
   fanFavoriteMovie: any[] = 
   [
