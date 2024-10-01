@@ -8,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  //Inject HttpClient
+
   constructor() {
     
   }
