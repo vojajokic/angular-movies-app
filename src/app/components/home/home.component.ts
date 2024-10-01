@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,85 +9,31 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  //Inject HttpClient
-
-  constructor() {
-    
+  constructor(private httpClient: HttpClient) {
   }
 
   isActive = true;
 
-  fanFavoriteMovie: any[] = 
-  [
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #1 Title',
-      actors: 'Movie #1 actors',
-      year: '2023',
-      rate: 9.2,
-      rank: 1
-    },
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #2 Title',
-      actors: 'Movie #2 actors',
-      year: '2023',
-      rate: 9.5,
-      rank: 2
-    },
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #3 Title',
-      actors: 'Movie #3 actors',
-      year: '2023',
-      rate: 8.5,
-      rank: 5
-    },
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #4 Title',
-      actors: 'Movie #4 actors',
-      year: '2023',
-      rate: 9.5,
-      rank: 1
-    },
-    
-  ]
-  topMovies: any[] = 
-  [
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #1 Title',
-      actors: 'Movie #1 actors',
-      year: '2023',
-      rate: 9.2,
-      rank: 1
-    },
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #2 Title',
-      actors: 'Movie #2 actors',
-      year: '2023',
-      rate: 9.5,
-      rank: 2
-    },
-    
-  ]
+  fanFavoriteMovie: any[] = [];
+  topMovies: any[] =  [];
   
-   // currentStyle: Record<string, string> = {};
-  // isCentered = false;
-  // isSuccessed = false;
-  // isLarge = true;
-
- // constructor() {  
-  //   this.currentStyle = {
-  //     'text-align': this.isCentered ? 'center' : '',
-  //     'color': this.isSuccessed ? 'green' : 'red',
-  //     'font-size': this.isLarge ? 'large' : 'small'
-  //   }
-  //  }
-
   ngOnInit(): void {
+    this.getFanFavoriteMovies();
+    this.getTopMovies();
+  }
+
+  getFanFavoriteMovies() {
+    this.httpClient.get<any[]>('assets/data/fanFavoriteMovies.json')
+    .subscribe((data: any[]) => {
+      this.fanFavoriteMovie = data;
+    })
+  }
+
+  getTopMovies() {
+    this.httpClient.get<any[]>('assets/data/topMovies.json')
+    .subscribe((data: any[]) => {
+      this.topMovies = data;
+    })
   }
 
 }
