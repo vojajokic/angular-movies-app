@@ -24,6 +24,9 @@ import { MyIfDirective } from './directives/my-if.directive';
 //Import HttpClientModule
 import {HttpClientModule} from '@angular/common/http';
 
+//Import Services
+import { MoviesService } from './services/movies.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +56,7 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
