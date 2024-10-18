@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <form>
+            <form #feedbackForm = "ngForm" (ngSubmit)="submitFeedback()">
                 <legend>Let us know what you think</legend>
                 <hr>
                 <div class="mb-3">
@@ -11,7 +11,11 @@
                         type="email" 
                         class="form-control" 
                         id="emailAddress" 
-                        placeholder="Your email address">
+                        placeholder="Your email address"
+                        name="emailAddress"
+                        [(ngModel)]="feedback.emailAddress"
+                    >
+                        
                 </div>
         
                 <div class="mb-3">
@@ -20,27 +24,37 @@
                         type="text" 
                         class="form-control"
                         id="phoneNumber"
-                        placeholder="Your phone number">
+                        placeholder="Your phone number"
+                        name="phoneNumber"
+                        [(ngModel)]="feedback.phoneNumber"   
+                    >
                 </div>
         
                 <div class="mb-3">
-                    <label for="rateExperience" class="form-label">Rate experience</label>
+                    <label for="rate" class="form-label">Rate experience</label>
                     <input 
                         type="range"
                         class="form-range"
-                        id="rateExperience"
+                        id="rate"
                         min="0"
                         max="10"
-                        step="1">
+                        step="1"
+                        name="rate"
+                        [(ngModel)]="feedback.rate"
+                        >
+                        <div>Your feedback: {{feedback.rate}}</div>
                 </div>
         
                 <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
+                    <label for="feedbackTitle" class="form-label">Title</label>
                     <input 
                         type="text" 
                         class="form-control"
-                        id="title"
-                        placeholder="Your feedback title">
+                        id="feedbackTitle"
+                        name="feedbackTitle"
+                        placeholder="Your feedback title"
+                        [(ngModel)] ="feedback.feedbackTitle"
+                    >
                 </div>
         
                 <div class="mb-3">
@@ -49,7 +63,11 @@
                         type="text" 
                         class="form-control"
                         id="feedback"
-                        placeholder="Your feedback">
+                        name="feedback"
+                        placeholder="Your feedback"
+                        [(ngModel)] = "feedback.feedback" 
+                    >
+
                 </div>
         
                 <div class="mb-3">

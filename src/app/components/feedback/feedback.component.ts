@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Feedback } from '../data/model/Feedback';
 
 @Component({
   selector: 'app-feedback',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
-
-  constructor() { }
+    
+  feedback: Feedback = new Feedback('','',8,'','');
 
   ngOnInit(): void {
   }
 
+  submitFeedback() {
+    //Add Some Code
+  }
 }
