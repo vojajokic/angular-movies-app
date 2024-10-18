@@ -27,6 +27,7 @@ import {HttpClientModule} from '@angular/common/http';
 //Import Services
 import { MoviesService } from './services/movies.service';
 import { GlobalErrorHandler } from './services/global-error-handler.service';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { GlobalErrorHandler } from './services/global-error-handler.service';
     ModalComponent,
     DetailsActorsComponent,
     NotFoundComponent,
+    FeedbackComponent,
 
     //Pipes
     ProfitPipe,

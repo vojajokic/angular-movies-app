@@ -7,6 +7,7 @@ import { DetailsComponent } from "../components/details/details.component";
 import { HomeComponent } from "../components/home/home.component";
 import { SearchComponent } from "../components/search/search.component";
 import { NotFoundComponent } from "../components/not-found/not-found.component";
+import { FeedbackComponent } from "../components/feedback/feedback.component";
 
 const routes: Routes = [
     {path:'', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path: 'details/actors/:id', component: DetailsActorsComponent}, 
     {path: 'details/movies/:id', component: DetailsMoviesComponent},
     {path:'details/reviews/:id', component: DetailsReviewsComponent},
+    {path:'feedback', component: FeedbackComponent},
 
     //START: Nested Routes
     // {path:'details/:id', component: DetailsComponent, children: [
@@ -25,7 +27,7 @@ const routes: Routes = [
     //END: Nested Routes
 
     {path:'search/:movieTitle', component:SearchComponent},
-    // {path:'feadback', component: FeadbackComponent}
+    // {path:'feadback', component: FeedbackComponent}
 
     //404 Page for non-existing URLs
     {path:'**', component: NotFoundComponent}, 
