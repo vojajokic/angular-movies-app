@@ -15,6 +15,13 @@
 
                         formControlName="emailAddress"
                     >
+                    <div class="text-danger" *ngIf="feedbackForm.get('emailAddress')?.invalid && feedbackForm.get('emailAddress')?.dirty">
+                        <div *ngIf="feedbackForm.get('emailAddress')?.hasError('required')">Email address is required
+                        </div>
+                        <div *ngIf="feedbackForm.get('emailAddress')?.hasError('email')">
+                            Invalid format
+                        </div>
+                    </div>
                 </div>
         
                 <div class="mb-3">
@@ -27,6 +34,11 @@
 
                         formControlName="phoneNumber"
                     >
+                    <div class="text-danger" *ngIf="feedbackForm.get('phoneNumber')?.invalid && feedbackForm.get('phoneNumber')?.dirty">
+                        <div  *ngIf="feedbackForm.get('phoneNumber')?.hasError('pattern')">
+                            Invalid pattern
+                        </div>
+                    </div>
                 </div>
         
                 <div class="mb-3">
@@ -41,6 +53,7 @@
 
                         formControlName="rate"
                         >
+                        <div>Your rate: {{feedbackForm.get('rate')?.value}}</div>
                 </div>
         
                 <div class="mb-3">
@@ -53,6 +66,11 @@
 
                         formControlName="feedbackTitle"
                     >
+                    <div class="text-danger" *ngIf="feedbackForm.get('feedbackTitle')?.invalid && feedbackForm.get('feedbackTitle')?.dirty">
+                        <div *ngIf="feedbackForm.get('feedbackTitle')?.hasError('required')">
+                            Feedback title is required
+                        </div>
+                    </div>
                 </div>
         
                 <div class="mb-3">
@@ -65,12 +83,17 @@
 
                         formControlName="feedback"
                         >
+                        <div class="text-danger" *ngIf="feedbackForm.get('feedback')?.invalid && feedbackForm.get('feedback')?.dirty">
+                            <div>
+                                Feedback is required
+                            </div>
+                        </div>
                 </div>
         
                 <div class="mb-3">
                     <button type="submit" 
-                    class="btn btn-primary"
-                    [disabled]="!feedbackForm.valid"
+                        class="btn btn-primary"
+                        [disabled]="!feedbackForm.valid"
                     >
                         <i class="bi bi-send"></i> Submit feedback
                     </button>
