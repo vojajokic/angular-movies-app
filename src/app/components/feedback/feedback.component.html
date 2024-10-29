@@ -21,6 +21,7 @@
                         <div *ngIf="feedbackForm.get('emailAddress')?.hasError('email')">
                             Invalid format
                         </div>
+                        <div *ngIf="feedbackForm.get('emailAddress')?.hasError('invalidDomain')">Invalid domain</div>
                     </div>
                 </div>
         
@@ -84,8 +85,12 @@
                         formControlName="feedback"
                         >
                         <div class="text-danger" *ngIf="feedbackForm.get('feedback')?.invalid && feedbackForm.get('feedback')?.dirty">
-                            <div>
+                            <div *ngIf="feedbackForm.get('feedback')?.hasError('required')">
                                 Feedback is required
+                            </div>
+
+                            <div *ngIf="feedbackForm.get('feedback')?.hasError('inappropriateKeyword')">
+                                Remove inappropriate keywords
                             </div>
                         </div>
                 </div>
