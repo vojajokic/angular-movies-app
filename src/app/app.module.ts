@@ -29,6 +29,7 @@ import { MoviesService } from './services/movies.service';
 import { GlobalErrorHandler } from './services/global-error-handler.service';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { AuthModule } from '@auth0/auth0-angular';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { AuthModule } from '@auth0/auth0-angular';
     })
   ],
   providers: [MoviesService, 
-    {provide: ErrorHandler, useClass: GlobalErrorHandler}
+    {provide: ErrorHandler, useClass: GlobalErrorHandler},
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
