@@ -9,6 +9,7 @@ import { SearchComponent } from "../components/search/search.component";
 import { NotFoundComponent } from "../components/not-found/not-found.component";
 import { FeedbackComponent } from "../components/feedback/feedback.component";
 import { AuthGuard } from "../auth.guard";
+import { NotAuthorizedComponent } from "../components/not-authorized/not-authorized.component";
 
 const routes: Routes = [
     {path:'', component: HomeComponent},
@@ -28,6 +29,8 @@ const routes: Routes = [
     //END: Nested Routes
 
     {path:'search/:movieTitle', component:SearchComponent},
+    {path:'401', component: NotAuthorizedComponent},
+
     // {path:'feadback', component: FeedbackComponent}
 
     //404 Page for non-existing URLs
